@@ -1,0 +1,34 @@
+<div class="row col-sm-12 col-md-12 mrdDash">
+<ul class="list-inline">
+  <li><h3>MRD Monitor</h3></li>
+  
+  <li class="pull-right"><div style="margin-top:15px">
+ <input type="checkbox" ng-model="checkFlag" id="mrdToggle" data-onstyle="danger" data-offstyle="info"></div></li>
+</ul>
+<div class="row" style="width:94%;margin-left:2%">
+<table id="mrdDash" class="table table-striped table-bordered display">
+<thead class="thead-default">
+	    	<th class="customTh">Table Name</th>
+	    	<th class="customTh">Last Refresh Time</th>
+	    	<th class="customTh">Last Refreshed RTD</th>
+	    	<th class="customTh">Current Volume</th>
+	    	<th class="customTh">Previous Volume</th>
+	    	<th class="customTh">Delta Change</th>
+	    	<th class="customTh">Status</th>
+	    	    	
+	    	</thead>
+</table>
+</div>
+</div>
+   <div ng-include="'assets/view/modal/mrdModal.html'"></div>
+   
+   <script>
+   $(function() {
+    $('#mrdToggle').bootstrapToggle({
+      on: 'RED',
+      off: 'View All'
+    });
+  
+    
+  })
+</script>

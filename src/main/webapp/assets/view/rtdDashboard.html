@@ -1,0 +1,111 @@
+ 
+ <div class="panel panel-default">
+ 		<div class="panel-heading tabAHeading">
+ 		<ul class="list-inline">
+ 			<li> Server </li>
+ 			<li><div class="dropdown">
+	    		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{serverName}}
+	    		<span class="caret"></span></button>
+	 			<ul class="dropdown-menu dropdown-menu-left">
+	 				<li ng-repeat="server in serverList"><a href ng-click=selectServer(server)>{{server.serverName}}</a></li>
+	      			<!-- <li><a href ng-click="selectServer('App01')">App01</a></li>
+	      			<li><a href ng-click="selectServer('App02')">App02</a></li> -->
+	    		</ul>
+	    		</div>
+   			</li>
+   			<li class="span12"> Last Refreshed : {{refreshTime}}</li>
+   			<li class="pull-right"><button type="button" class="btn btn-primary btn-success">Refresh All</button></li>
+   		</ul>
+   		
+		</div>
+	  	<div class="panel-body">
+		<div class="row">
+	  	<div class="col-sm-8">
+	    <div class="mycontent-left">
+	    	<table class="table">
+	    	<thead class="thead-default">
+	    	<th class="customTh">ILS Name</th>
+	    	<th class="customTh">Channel</th>
+	    	<th class="customTh">Type</th>
+	    	<th class="customTh">Health</th>
+	    	<th class="customTh"></th>
+	    	</thead>
+	    	<tr ng-repeat="inlineService in inlineServices">
+	    	<td>{{inlineService.ilsName}} </td>
+	    	<td>{{inlineService.channelName}}</td>
+	    	<td>{{serverType}}</td>
+	    	<td><div ng-if="inlineService.status==='true'" class="green">&nbsp;</div>
+	    	<div ng-if="inlineService.status!='true'" class="red">&nbsp;</div>
+	    	</td>
+	    	<td class="center-block"><button type="button" class="btn-xs btn-primary" ng-click="getILSStatus(inlineService)">Ping</button></td>
+	    	</tr>
+	    	
+	    	</table>
+	    </div>
+	  </div>
+	  <div class="col-sm-4">
+	    <div class="mycontent-right">
+	    <h4 align="center">Server Health</h4>
+	    <div >
+	          
+	        <table class="table">
+	        <thead class="thead-default">
+	        <th class="customTh">Server Stats</th>
+	        <th class="customTh">Value</th>
+	        </thead>
+	        <tr>
+	        <td>Total Request Count</td>
+	        <td>{{serverStats.totReqCount}}</td>
+	        </tr>
+	         <tr>
+	        <td>Total Session Count</td>
+	        <td>{{serverStats.totSessnCount}}</td>
+	        </tr>
+	         <tr>
+	        <td>Timed Out Request Count</td>
+	        <td>{{serverStats.totTimedOutReqCount}}</td>
+	        </tr>
+	        </table>
+	    <!-- <div id="svg" style="width: 200px; height: 200px;" class="pull-left"></div>
+		<ul data-pie-id="svg" class="pull-right pieList" style="padding:0px">
+	            <li data-value="80" data-text="Successful Requests"><strong>Successful Requests</strong></li>
+	            <li data-value="20" data-text="Timed Out Requests"><strong>Timed Out Requests</strong>	</li>
+	          </ul>
+	          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas> 
+	        </div> -->
+	    </div>
+	  </div>
+	</div>
+	
+	  </div>
+	  <div class="panel-footer">
+	  <div class="row">
+	<table class="table serverTable">
+	    	<thead class="thead-default">
+	    	<th class="customTh">Server Name</th>
+	    	<th class="customTh">IP</th>
+	    	<th class="customTh">Total Request Count</th>
+	    	<th class="customTh">Total Session Count</th>
+	    	<th class="customTh">TimedOut Request Count</th>
+	    	<!-- <th class="customTh">Health</th> -->
+	    	<th class="customTh"></th>
+	    	</thead>
+	    	<tr>
+	    	<td>{{currentServer.serverName}} </td>
+	    	<td>{{currentServer.serverIp}}</td>
+	    	<td class="lpad15">{{serverStats.reqCountAfterRefresh}}</td>
+	    	<td class="lpad15">{{serverStats.sessnCountAfterRefresh}}</td>
+	    	<td class="lpad15">{{serverStats.timedOutReqCountAfterRefresh}}</td>
+	    	<!-- <td class="lpad15">{{serverStats.totReqCount}}</td>
+	    	<td class="lpad15">{{serverStats.totSessnCount}}</td>
+	    	<td class="lpad15">{{serverStats.totTimedOutReqCount}}</td> -->
+	    	<!-- <td ><div class="green">&nbsp;</div></td> -->
+	    	<td class="lpad15"><button type="button" class="btn-xs btn-primary" ng-click="getServerStatus(currentServer)">Get Count</button></td>
+	    	</tr>
+	    	
+	    	</table>
+		<span class="span12">Data in this Section is Refreshed Every 15 minutes</span>
+	</div>
+	  </div>
+	</div>

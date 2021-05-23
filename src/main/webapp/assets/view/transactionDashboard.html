@@ -1,0 +1,103 @@
+    <div class="panel panel-default childContainer">
+ 		<div class="panel-heading tabAHeading">
+ 		<ul class="list-inline">
+ 			<li> Select Server </li>
+ 			<li><div class="dropdown">
+	    		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{serverName}}
+	    		<span class="caret"></span></button>
+	 			<ul class="dropdown-menu dropdown-menu-left">
+	 				<li ng-repeat="server in serverList"><a href ng-click=selectServer(server)>{{server.serverName}} ({{server.serverId}})</a></li>
+	      			<!-- <li><a href ng-click="selectServer('App01')">App01</a></li>
+	      			<li><a href ng-click="selectServer('App02')">App02</a></li> -->
+	    		</ul>
+	    		</div>
+   			</li>
+   			<li class="pull-right"><button type="button" class="btn btn-primary btn-success" ng-click=getServerStatsByServer(currentServer)  data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Go</button></li>
+   			<!-- <li class="pull-right"><button type="button" class="btn btn-primary btn-success" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Go</button></li> -->
+   		</ul>
+   		
+		</div>
+	  	<div class="panel-body">
+	  	<div class="collapse" id="collapseExample">
+  			<div class="well">
+  			<div class="row">
+    		<ul class="list-inline">
+    		<!-- 	<li>Frequency</li>
+    			<li> <label><input type="radio" id="q158" name="quality[25]" value="3" /> Hourly</label> </li>
+    			<li> <label><input type="radio" id="q158" name="quality[25]" value="3" /> Daily</label> </li> -->
+    			
+    			<li class="pull-left">
+    				
+	                <div class='input-group date ' id='toDate' style="width:200px" >
+	                    <input type='text' class="form-control"  placeholder="To" id="startDate" ng-model="startDate"/>
+	                    <span class="input-group-addon" style="padding:5px"">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+    			</li>
+    			<li class="pull-left">
+    				
+	                <div class='input-group date ' id='fromDate' style="width:200px">
+	                    <input type='text' class="form-control" placeholder="From" id="endDate" ng-model="endDate"/>
+	                    <span class="input-group-addon" style="padding:5px">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+    			</li>
+    			
+	 			<li class="pull-right"><div class="dropdown ">
+		    		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{idName}}
+		    		<span class="caret"></span></button>
+		 			<ul class="dropdown-menu dropdown-menu-left">
+		 				<li><a href ng-click="selectId('sessionId')">Session Id</a></li>
+		 				<li><a href ng-click="selectId('customerId')">Customer Id</a></li>
+		    		</ul>
+		    		<input type="text" name="paramId" ng-model="paramId"/>
+		    		</div>
+	   			</li>
+	   			
+	   			<!-- <li class="pull-right"><input type="text" name="paramId" ng-model="paramId"/>   </li>	 -->
+    		</ul>
+    		</div>
+    		<div class="row" style="text-align: center">
+    			<button type="button" class="btn btn-primary btn-info" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" ng-click="getTransactionByDate()">Go</button>
+    			
+    		</div>
+    		<div class="row">
+  			<strong>Info!</strong> <i>Enter session/customer Id to narrow down your search (Optional)</i>
+			</div>
+  			</div></div>
+		
+	  <div class="panel-body">
+	  <div class="row">
+	<table id="trnsctionReports"  class="table table-striped table-bordered display">
+	    	<thead class="thead-default">
+	    	<th class="customTh">Session Id</th>
+	    	<th class="customTh">Customer ID</th>
+	    	<th class="customTh">Account ID</th>
+	    	<th class="customTh">Channel</th>
+	    	<th class="customTh">Request Start Time</th>
+	    	<th class="customTh">Request End time</th>
+	    	    	
+	    	</thead>
+	    	
+	    	</table>
+	
+	</div>
+	  </div>
+	  <div ng-include="'assets/view/modal/transactionModal.html'"></div>
+	</div>
+	</div>
+	 <script type="text/javascript">
+            $(function () {
+            	  $('#toDate').datetimepicker({
+                      format: 'DD/MM/YYYY',
+                    	  extraFormats:['dd/mm/yyyy']
+                      
+                  });
+                $('#fromDate').datetimepicker({
+                	 format: 'DD/MM/YYYY'
+                });
+            });
+        </script>
+  

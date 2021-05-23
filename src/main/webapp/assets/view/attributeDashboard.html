@@ -1,0 +1,64 @@
+<div class="row col-sm-12 col-xs-12">
+
+<div id="rootwizard">
+	<ul class="nav nav-pills">
+	  	<li class="active white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('STANDARD')">Standard</a></li>
+		<li class="white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('PROSPECT')">Prospect</a></li>
+	</ul>
+	<div class="tab-content">
+	    <div class="edwMainHead" ng-show="stFlag">
+	    
+	    	<ul class="nav nav-tabs">
+			<li class="active" id="edwList"><a data-toggle="tab" ng-click="selectMenu1('INCREMENT')">Incremental</a></li>
+			<li id="edwList"><a data-toggle="tab" ng-click="selectMenu1('MILESTONE')">MileStone</a></li>
+			<li id="edwList"><a data-toggle="tab" ng-click="selectMenu1('REALTIME')">RealTime</a></li>
+		</ul>
+		<div class="tab-content">
+			  <div class="edwMainHead" ng-show="incFlag">
+	    <div ng-include="'assets/view/attributeMonitor_Inc.html'"></div>
+	    </div>
+	     <div class="edwMainHead" ng-show="mileFlag">
+	     <div ng-include="'assets/view/attributeMonitor_MileStone.html'"></div>
+	    </div>
+	     <div class="edwMainHead" ng-show="realFlag">
+	     <div ng-include="'assets/view/attributeMonitor_Real.html'"></div>
+	    </div>
+	    </div>
+	    </div>
+	     <div class="edwMainHead" ng-show="prospectFlag">
+	  <!--   <div ng-include="'assets/view/incrementalDash.html'"></div> -->
+	 		<ul class="nav nav-tabs">
+			<li class="active" id="edwList"><a data-toggle="tab" ng-click="selectMenu2('INCREMENT')">Incremental</a></li>
+			<li id="edwList"><a data-toggle="tab" ng-click="selectMenu2('MILESTONE')">MileStone</a></li>
+			<li id="edwList"><a data-toggle="tab" ng-click="selectMenu2('REALTIME')">RealTime</a></li>
+		</ul>
+		<div class="tab-content">
+			  <div class="edwMainHead" ng-show="proIncFlag">
+	    <div ng-include="'assets/view/proAttributeMonitor_Inc.html'"></div>
+	    </div>
+	     <div class="edwMainHead" ng-show="proMileFlag">
+	     <div ng-include="'assets/view/proAttributeMonitor_MileStone.html'"></div>
+	    </div>
+	     <div class="edwMainHead" ng-show="proRealFlag">
+	     <div ng-include="'assets/view/proAttributeMonitor_Real.html'"></div>
+	    </div>
+	    </div>
+ 
+	    </div>
+	</div>	
+</div>
+     <div ng-include="'assets/view/modal/attributeModal.html'"></div>
+
+
+
+
+
+</div>
+
+<script>
+ 
+  $(document).ready(function() {
+	  	$('#rootwizard').bootstrapWizard({'tabClass': 'nav nav-pills'});
+	    $( "#accordion" ).accordion();
+	});
+  </script>

@@ -1,0 +1,96 @@
+html, body{
+    height: 100%;
+}
+
+.navbar-default {
+    background-color: #002c9b;
+    border-color: #472695;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    
+}
+
+ body{
+ background-color:#E1E8F0
+ }
+ .green{
+ background-color:#00FF00; /* #2F4F2F; */
+ }
+ .red{
+ background-color: #cc0000;
+ }
+ 
+ .container{
+ height:80%;
+ }
+ /* #mainPanel{
+ 	height:80%;
+ } */
+ .white > li{
+    background-color: #fff;
+}
+.upPad10{
+	padding-top: 10px;
+}
+.tabAHeading{
+	padding-bottom:0px !important;
+	 background-color: #fff !important;
+}
+.tabAPanel{
+	margin:0px;
+}
+.mycontent-left {
+  border-right: 1px solid #333;
+}
+ th.customTh {
+    background-color: #0245b4;
+    color: white;
+}  
+
+
+.lpad15 {
+  padding-left:25px !important
+}
+
+.serverTable{
+	margin-left:15px !important;
+	width:98%;
+	margin:0px !important;
+}
+.s40{
+	width:40px;
+	
+}
+
+
+
+.span12 {
+text-align: center;
+margin-left:20%;
+font-weight: bold;
+}
+
+ul.indexMenu li a {  color: #0245b4;/* #5a31be */
+     background-color:#fff !important;
+     border-radius: 0px !important;
+}
+ul.indexMenu li a.mouseover {color: #ffffff;
+     background-color:#337ab7 !important;
+    border-radius: 0px !important;
+}
+ul.indexMenu li a.mouseout {color: #5a31be;
+     background-color:#fff !important;
+     border-radius: 0px !important;
+}
+ul.indexMenu li a.clicked {color: #ffffff;
+     background-color:#337ab7 !important;
+    border-radius: 0px !important;
+}
+
+
+
+.graphSection{
+	
+}

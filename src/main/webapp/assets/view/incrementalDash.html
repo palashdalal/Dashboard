@@ -1,0 +1,93 @@
+<div class="col-sm-12 col-md-12">
+<div class="row col-sm-12 col-md-12">
+<ul class="list-inline col-sm-4 col-md-4" id="incMainList" >
+<li>
+           <div class='input-group date' id='toDate' style="width:200px" >
+        <input type='text' class="form-control"  placeholder="From" id="startDate" ng-model="startDate"/>
+        <span class="input-group-addon" style="padding:5px">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</li>
+<li>
+    <div class='input-group date ' id='fromDate' style="width:200px">
+        <input type='text' class="form-control" placeholder="To" id="endDate" ng-model="endDate"/>
+        <span class="input-group-addon" style="padding:5px">
+                   <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+           </div>
+</li>
+
+<li class="pull-right"  style="width: 20px;">
+<button type="button" class="btn btn-primary">Go</button> 
+</li>
+</ul>
+ <ul class="list-inline col-sm-8 col-md-8" id="incMainList" >
+<li class="pull-right">
+<p class="threshFont">Threshold Run Time : {{incThreshold}}</p>
+</li>
+
+</ul>
+</div>
+<div class="row col-sm-12 col-md-12" style="height:60px"></div>
+<div class="row" class="col-sm-12 col-md-12">
+<div class="col-sm-6 col-md-6">
+<table class="table table-striped table-bordered">
+    <thead class="thead-default">
+      <tr>
+        <th class="customTh">Week</th>
+        <th class="customTh">Status</th>
+        <th class="customTh">Start Time</th>
+        <th class="customTh">End Time</th>
+        <th class="customTh">Execution Time</th>
+        <th class="customTh">Execution Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14-May-2016</td>
+        <td><div id="greenCircle"></div></td>
+        <td>12:10 AM</td>
+        <td>2:10 AM</td>
+        <td>2 Hours</td>
+        <td>Normal</td>
+      </tr>
+       <tr>
+        <td>21-May-2016</td>
+        <td><div id="greenCircle"></div></td>
+        <td>12:10 AM</td>
+        <td>4:10 AM</td>
+        <td>4 Hours</td>
+        <td>Alert</td>
+      </tr>
+       <tr>
+        <td>27-May-2016</td>
+        <td><div id="yellowCircle"></div></td>
+        <td>12:10 AM</td>
+        <td>2:10 AM</td>
+        <td>2 Hours</td>
+        <td>Normal</td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="list-inline col-sm-12 col-md-12">
+  <li class="col-sm-2 col-md-2"><div id="greenCircle" class="col-sm-6 col-md-6"></div><p class="col-sm-6 col-md-6">Success</p></li>
+   <li class="col-sm-3 col-md-3"><div id="yellowCircle" class="col-sm-2 col-md-2"></div><p class="col-sm-10 col-md-10">In Progress</p></li>
+  <li class="col-sm-3 col-md-3"><div id="greyCircle" class="col-sm-3 col-md-3"></div><p class="col-sm-9 col-md-9">Not Started</p></li>
+  <li class="col-sm-2 col-md-2"><div id="redCircle" class="col-sm-6 col-md-6"></div><p class="col-sm-6 col-md-6">Failed</p></li>
+  </ul>
+  </div>
+  </div>
+</div>
+<script type="text/javascript">
+            $(function () {
+            	  $('#toDate').datetimepicker({
+                      format: 'DD/MM/YYYY',
+                    	  extraFormats:['dd/mm/yyyy']
+                      
+                  });
+                $('#fromDate').datetimepicker({
+                	 format: 'DD/MM/YYYY'
+                });
+            });
+        </script>

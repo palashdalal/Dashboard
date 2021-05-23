@@ -1,0 +1,32 @@
+[
+{
+"ilsName": "PartnerDecisioning",
+"channel":"Agent.com",
+"type":"Live",
+"status":"true"
+},
+{
+"ilsName": "CotDecisioning",
+"channel":"Agent.com",
+"type":"Live",
+"status":"true"
+},
+{
+"ilsName": "SelfservDecisioning",
+"channel":"BT.com",
+"type":"Live",
+"status":"false"
+},
+{
+"ilsName": "DanteDecisioning",
+"channel":"Champions League",
+"type":"Live",
+"status":"true"
+},
+{
+"ilsName": "ConsumerDecisioning",
+"channel":"One View",
+"type":"Live",
+"status":"true"
+}
+]

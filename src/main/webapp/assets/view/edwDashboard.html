@@ -1,0 +1,32 @@
+   <div class="col-md-12 col-sm-12">
+ 		<div id="rootwizard">
+	<ul class="nav nav-pills">
+	  	<li class="active white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('OVERALL')">OverAll</a></li>
+		<li class="white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('INCREMENT')">Incremental</a></li>
+		<li class="white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('MILESTONE')">MileStone</a></li>
+		<li class="white" id="edwList"><a data-toggle="tab" ng-click="selectMenu('REALTIME')">RealTime</a></li>
+	</ul>
+	<div class="tab-content">
+	    <div class="edwMainHead" ng-show="overAllFlag">
+	     OverALL
+	    </div>
+	     <div class="edwMainHead" ng-show="incFlag">
+	    <div ng-include="'assets/view/incrementalDash.html'"></div>
+	    </div>
+	     <div class="edwMainHead" ng-show="mileFlag">
+	      Milestone
+	    </div>
+	     <div class="edwMainHead" ng-show="realFlag">
+	      RealTime
+	    </div>
+	   
+		
+	</div>	
+</div>
+	    	</div>
+	    	
+	    	 <script type="text/javascript">
+	    	 $(document).ready(function() {
+	    		  	$('#rootwizard').bootstrapWizard({'tabClass': 'nav nav-pills'});
+	    		});
+	    	</script>

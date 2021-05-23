@@ -1,0 +1,46 @@
+  <div class="panel-group">
+  <div class="panel panel-default" style="padding:2%;padding-bottom: 0px;border:0px;box-shadow: none;">
+    <div class="panel-heading" >
+      <h5 class="panel-title" style="height: 25px;font-size:large">
+		<button class="btn btn-link" data-toggle="collapse" data-target="#proT1_inc" ng-click="proShowDelta1_INC()">   <span class="glyphicon glyphicon-plus-sign" ng-show="proDelta1_inc"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="proDelta1_inc"></span></button>
+		Delta Difference > 10 % <span class="badge" style="margin-left:25px;background-color: red">{{redList.length}}</span>
+      </h5>
+    </div>
+    <div id="proT1_inc" class="panel-collapse collapse in">
+      <div class="panel-body">
+      	<span ng-repeat="redAttr in redList">
+      	<button type="button" class="btn btn-danger floated" style="border-radius:20px;margin-top:3px" ng-click="showProspectAttributePopup(redAttr)">{{redAttr}}</button></span>
+      	
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" style="padding-left:2%;padding-right:2%;border:0px;box-shadow: none;">
+    <div class="panel-heading" >
+      <h4 class="panel-title" style="height: 25px;font-size:large">
+	<button class="btn btn-link" data-toggle="collapse" data-target="#proT2_inc" ng-click="proShowDelta2_INC()">   <span class="glyphicon glyphicon-plus-sign" ng-show="proDelta2_inc"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="proDelta2_inc"></span></button>
+	Delta Difference > 5 %<span class="badge" style="margin-left:25px;background-color: yellow">{{amberList.length}}</span>
+      </h4>
+    </div>
+    <div id="proT2_inc" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<span ng-repeat="amberAttr in amberList">
+      	<button type="button" class="btn btn-warning floated" style="border-radius:20px;margin-top:3px" ng-click="showProspectAttributePopup(amberAttr)">{{amberAttr}}</button></span>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" style="padding-left:2%;padding-right:2%;border:0px;box-shadow: none;">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="height: 25px;font-size:large">
+	<button class="btn btn-link" data-toggle="collapse" data-target="#proT3_inc" ng-click="proShowDelta3_INC()">   <span class="glyphicon glyphicon-plus-sign" ng-show="proDelta3_inc"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="proDelta3_inc"></span></button>
+	No Delta Difference <span class="badge" style="margin-left:25px;background-color: green">{{greenList.length}}</span>
+      </h4>
+    </div>
+    <div id="proT3_inc" class="panel-collapse collapse">
+      <div class="panel-body">
+      <span ng-repeat="greenAttr in greenList">
+      	<button type="button" class="btn btn-success floated" style="border-radius:20px;margin-top:3px" ng-click="showProspectAttributePopup(greenAttr)">{{greenAttr}}</button></span>
+      
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashboard">
+<head>
+  <title>RTD Dashboard</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--   <meta charset="utf-8"> -->
+  <!-- meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  
+  	<!-- CSS Files -->
+ 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/pizza.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker-standalone.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-toggle.min.css">
+    
+  
+   	<!-- Javascript Libraries -->
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/js/tether.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap.min.js"></script>
+	<script src="assets/js/dataTables.rowsGroup.js"></script>
+	<script src="assets/js/moment.js"></script>
+	<script src="assets/js/transition.js"></script>
+	<script src="assets/js/collapse.js"></script>
+	<script src="assets/js/jquery.bootstrap.wizard.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/js/DateUtility.js"></script>
+    <script src="assets/plugins/lib/angular.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/lib/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/lib/angular-animate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/lib/ui-bootstrap-tpls-1.1.0.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/lib/spin.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/lib/angular-spinner.min.js" type="text/javascript"></script>
+    <script src="assets/js/tableHeadFixer.js" type="text/javascript"></script>
+    <script src="assets/js/Chart.js" type="text/javascript"></script>
+    <script src="assets/js/angular-chart.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.floatThead._.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.floatThead.js" type="text/javascript"></script>
+    <script src="assets/js/highcharts.js" type="text/javascript"></script>
+    <script src="assets/js/customjs/rtdChart.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui.js"  type="text/javascript"></script>
+    <script src="assets/js/bootstrap-toggle.min.js" type="text/javascript"></script>
+    
+       
+   	<!-- Custom JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/controller/mainController.js"></script>
+    <script src="assets/controller/rtdController.js"></script>
+    <script src="assets/controller/edwController.js"></script>
+    <script src="assets/controller/reportController.js"></script>
+    <script src="assets/controller/transactionController.js"></script>
+    <script src="assets/controller/contactController.js"></script>
+    <script src="assets/controller/attributeController.js"></script>
+     <script src="assets/controller/mrdController.js"></script>
+  
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	 $(function () {
+             $('#date').datetimepicker();
+             $('#date1').datetimepicker();
+         });
+    	$('.firstPill').addClass('clicked');
+        $("div.container ul li a")
+         .mouseover(function() {
+             $(this).addClass('mouseover');
+         })
+         .mouseout(function() {
+             $(this).removeClass('mouseover');
+         });
+        $("div.container ul li a").click(function(e) {
+            $(this).toggleClass("clicked");
+            $("div.container ul li a").not(this).removeClass("clicked"); //remove the clicked class from all other elements
+        });
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid col-sm-12">
+  <!--   <div class="navbar-header">
+      RTD Dashboard
+    </div> -->
+    <ul class="nav navbar-nav">
+    	<li><a href="/RTDDashboard/#/mainDashboard"> <span class="glyphicon glyphicon-home" aria-hidden="true"><span class="menuFont">Home</span></a></li>
+		<li><a href="/RTDDashboard/#/reports"> <span class="glyphicon glyphicon-align-left" aria-hidden="true"><span class="menuFont">Reports</span></a></li>
+		<li><a href="/RTDDashboard/#/contactDashboard"><span class="glyphicon glyphicon-random" aria-hidden="true"><span class="menuFont">Contacts</span></a></li>
+	<!-- 	<li><a href="/RTDDashboard/#/transactionDashboard"><span class="glyphicon glyphicon-flash" aria-hidden="true"><span class="menuFont">Transaction</span></a></li>
+		<li><a href="/RTDDashboard/#/edwDashboard"><span class="glyphicon glyphicon-random" aria-hidden="true"><span class="menuFont">EDW</span></a></li> -->
+		<li><a href="/RTDDashboard/#/attMonitor"><span class="glyphicon glyphicon-random" aria-hidden="true"><span class="menuFont">Attribute Monitor</span></a></li>
+		<li><a href="/RTDDashboard/#/mrdMonitor"><span class="glyphicon glyphicon-random" aria-hidden="true"><span class="menuFont">MRD</span></a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+    <li class="pull-right"><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"><span class="menuFont">User</span></a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container col-sm-12">
+	<!-- <ul class="nav nav-pills indexMenu">
+		<li><a href="/RTDDashboard/#/rtdDashboard" class="firstPill">RTD</a></li>
+		<li><a href="/RTDDashboard/#/reports">Reports</a></li>
+		<li><a href="/RTDDashboard/#/edwDashboard">Contacts</a></li>
+		<li><a href="/RTDDashboard/#/transactionDashboard">Transaction</a></li>
+		<li><a href="/RTDDashboard/#/transactionDashboard">EDW</a></li>
+		<li><a href="/RTDDashboard/#/attMonitor">Attribute Monitor</a></li>
+	</ul> -->
+	 <div id="mainView" ui-view></div>
+
+</div>
+
+</body>
+</html>

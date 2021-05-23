@@ -1,0 +1,89 @@
+ <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Transaction Details</h4>
+        </div>
+        <div class="modal-body">
+        <h4>Request Attributes</h4>
+         <div class="well">
+        
+          <div class="form-inline form-group row" ng-repeat="request in requestAttr">
+		      <div class="col-sm-6">
+		       <label >{{request.param1}} : </label>
+		       <span>{{request.param2}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label >{{request.param3}} : </label>
+    			<span>{{request.param4}}</span>
+		      </div>
+		      </div>
+         </div>
+         <h4>Intermediate Attributes</h4>
+         <div class="well">
+		      <div class="form-inline form-group row">
+		      <div class="col-sm-6">
+		       <label for="customerId">Customer Id : </label>
+		       <span>{{transaction.customerId}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label for="advisorName">Account Id : </label>
+    			<span>{{transaction.accountId}}</span>
+		      </div>
+		      </div>
+		       <div class="form-inline form-group row">
+		      <div class="col-sm-6">
+		       <label for="customerId">DB Fetch Start Time : </label>
+		       <span>{{transaction.customerDetailsDBStartTime}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label for="advisorName">DB Fetch End Time : </label>
+    			<span>{{transaction.customerDetailsDBEndTime}}</span>
+		      </div>
+		      </div>
+		       <div class="form-inline form-group row">
+		      <div class="col-sm-6">
+		       <label for="customerId">Request Start Time : </label>
+		       <span>{{transaction.requestStartTime}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label for="advisorName">Request End Time : </label>
+    			<span>{{transaction.requestEndTime}}</span>
+		      </div>
+		      </div>
+		        <div class="form-inline form-group row">
+		      <div class="col-sm-6">
+		       <label for="customerId">Regrade Matrix Start Time : </label>
+		       <span>{{transaction.regradeMatrixStartTime}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label for="advisorName">Regrade Matrix End Time : </label>
+    			<span>{{transaction.regradeMatrixEndTime}}</span>
+		      </div>
+		      </div>
+    	</div>
+    	 <h4>Response Attributes</h4>
+         <div class="well">
+        
+          <div class="form-inline form-group row" ng-repeat="request in responseAttr">
+		      <div class="col-sm-6">
+		       <label >{{request.param1}} : </label>
+		       <span>{{request.param2}}</span>
+		      </div>
+		       <div class="col-sm-6">
+		       <label >{{request.param3}} : </label>
+    			<span>{{request.param4}}</span>
+		      </div>
+		      </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

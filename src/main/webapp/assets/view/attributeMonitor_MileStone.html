@@ -1,0 +1,75 @@
+<!--  <div id="accordion" class="attrInc">
+  <h3 class="bg-success">Delta Difference > 10 % <span class="badge">7</span></h3>
+  <div>
+  <button type="button" class="btn btn-danger floated" style="border-radius:20px;margin-top:3px">BB_PROMTIOM_CURR</button>
+   <button type="button" class="btn btn-danger floated" style="border-radius:20px;margin-top:3px">BB_END_DATE</button>
+    <button type="button" class="btn btn-danger floated" style="border-radius:20px;margin-top:3px">BB_START_DATE</button>
+  </div>
+  <h3>Delta Difference > 5 % <span class="badge">7</span></h3>
+  <div>
+     <button type="button" class="btn btn-warning floated" style="border-radius:20px;margin-top:3px">BB_PROMTIOM_CURR</button>
+   <button type="button" class="btn btn-warning floated" style="border-radius:20px;margin-top:3px">BB_END_DATE</button>
+    <button type="button" class="btn btn-warning floated" style="border-radius:20px;margin-top:3px">BB_START_DATE</button>
+  </div>
+  <h3>No Delta Difference <span class="badge">7</span></h3>
+  <div>
+     <button type="button" class="btn btn-success floated" style="border-radius:20px;margin-top:3px">BB_PROMTIOM_CURR</button>
+   <button type="button" class="btn btn-success floated" style="border-radius:20px;margin-top:3px">BB_END_DATE</button>
+    <button type="button" class="btn btn-success floated" style="border-radius:20px;margin-top:3px">BB_START_DATE</button>
+  </div>
+  
+</div>
+
+<script>
+ 
+  $(document).ready(function() {
+	    $( "#accordion" ).accordion();
+	});
+  </script> -->
+  
+  <div class="panel-group">
+  <div class="panel panel-default" style="padding:2%;padding-bottom: 0px;border:0px;box-shadow: none;">
+    <div class="panel-heading" >
+      <h5 class="panel-title" style="height: 25px;font-size:large">
+		<button class="btn btn-link" data-toggle="collapse" data-target="#tab1_mile" ng-click="showDelta1_MILE()">   <span class="glyphicon glyphicon-plus-sign" ng-show="delta1_mile"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="delta1_mile"></span></button>
+		Delta Difference > 10 % <span class="badge" style="margin-left:25px;background-color: red">{{redList.length}}</span>
+      </h5>
+    </div>
+    <div id="tab1_mile" class="panel-collapse collapse in">
+      <div class="panel-body">
+      	<span ng-repeat="redAttr in redList">
+      	<button type="button" class="btn btn-danger floated" style="border-radius:20px;margin-top:3px" ng-click="showStandardAttributePopup(redAttr)">{{redAttr}}</button></span>
+      	
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" style="padding-left:2%;padding-right:2%;border:0px;box-shadow: none;">
+    <div class="panel-heading" >
+      <h4 class="panel-title" style="height: 25px;font-size:large">
+	<button class="btn btn-link" data-toggle="collapse" data-target="#tab2_mile" ng-click="showDelta2_MILE()">   <span class="glyphicon glyphicon-plus-sign" ng-show="delta2_mile"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="delta2_mile"></span></button>
+	Delta Difference > 5 %<span class="badge" style="margin-left:25px;background-color: yellow">{{amberList.length}}</span>
+      </h4>
+    </div>
+    <div id="tab2_mile" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<span ng-repeat="amberAttr in amberList">
+      	<button type="button" class="btn btn-warning floated" style="border-radius:20px;margin-top:3px" ng-click="showStandardAttributePopup(amberAttr)">{{amberAttr}}</button></span>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" style="padding-left:2%;padding-right:2%;border:0px;box-shadow: none;">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="height: 25px;font-size:large">
+	<button class="btn btn-link" data-toggle="collapse" data-target="#tab3_mile" ng-click="showDelta3_MILE()">   <span class="glyphicon glyphicon-plus-sign" ng-show="delta3_mile"> </span><span class="glyphicon glyphicon-minus-sign" ng-hide="delta3_mile"></span></button>
+	No Delta Difference <span class="badge" style="margin-left:25px;background-color: green">{{greenList.length}}</span>
+      </h4>
+    </div>
+    <div id="tab3_mile" class="panel-collapse collapse">
+      <div class="panel-body">
+      <span ng-repeat="greenAttr in greenList">
+      	<button type="button" class="btn btn-success floated" style="border-radius:20px;margin-top:3px" ng-click="showStandardAttributePopup(greenAttr)">{{greenAttr}}</button></span>
+      
+      </div>
+    </div>
+  </div>
+</div>
